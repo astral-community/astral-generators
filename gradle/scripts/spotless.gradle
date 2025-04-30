@@ -1,0 +1,20 @@
+spotless {
+    encoding "UTF-8"
+
+    kotlin {
+        target "src/*/kotlin/astralgenerators/**/*.kt"
+
+        endWithNewline()
+        toggleOffOn()
+
+        ktfmt().kotlinlangStyle().configure {
+            it.removeUnusedImports = true
+        }
+    }
+
+    format("dotfiles") {
+        target(".gitignore", ".gitattributes", ".editorconfig")
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}

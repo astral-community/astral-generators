@@ -1,0 +1,41 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+	id "fabric-loom" version "1.10-SNAPSHOT"
+	id "maven-publish"
+	id "org.jetbrains.kotlin.jvm" version "2.1.20"
+	id "com.diffplug.spotless" version "7.0.3"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+configurations.configureEach {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:${project.loader_version}")
+	}
+}
+
+apply from: "$rootDir/gradle/scripts/moddevgradle.gradle"
+apply from: "$rootDir/gradle/scripts/repositories.gradle"
+apply from: "dependencies.gradle"
+apply from: "$rootDir/gradle/scripts/resources.gradle"
+apply from: "$rootDir/gradle/scripts/jars.gradle"
+apply from: "$rootDir/gradle/scripts/publishing.gradle"
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 17
+}
+
+tasks.withType(KotlinCompile).all {
+	kotlinOptions {
+		jvmTarget = 17
+	}
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
