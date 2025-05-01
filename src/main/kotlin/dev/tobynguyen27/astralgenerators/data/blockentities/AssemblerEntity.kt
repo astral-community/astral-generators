@@ -89,7 +89,7 @@ class AssemblerEntity(type: BlockEntityType<AssemblerEntity>, pos: BlockPos, sta
             return match.isPresent && canInsertItemIntoOutputSlot(
                 container,
                 match.get().output
-            ) && canInsertAmountIntoOutputSlot(container)
+            ) && canInsertAmountIntoOutputSlot(container, match.get().output)
         }
 
 
@@ -104,23 +104,47 @@ class AssemblerEntity(type: BlockEntityType<AssemblerEntity>, pos: BlockPos, sta
             val match = level.recipeManager.getRecipeFor(AssemblerRecipe.Type.INSTANCE, container, level)
 
             if (match.isPresent) {
-                (0..8).forEach { slot ->
-                    entity.removeItem(slot, 1)
+                val inputs = match.get().getInputItems()
+
+                for (input in inputs) {
+                    var remaining = input.items.size
+
+                    for (slot in 0..8) {
+                        val stack = entity.getItem(slot)
+
+                        if (input.test(stack)) {
+                            val removeAmount = minOf(stack.count, remaining)
+                            entity.removeItem(slot, removeAmount)
+                            remaining -= removeAmount
+                            if (remaining <= 0) break
+                        }
+                    }
                 }
 
-                entity.setItem(9, ItemStack(match.get().output.item, entity.getItem(9).count + 1))
+                val output = ItemStack(match.get().output.item, entity.getItem(9).count + match.get().output.count)
+                output.tag = match.get().output.tag
+
+                entity.setItem(
+                    9,
+                    output
+                )
                 entity.energyStorage.amount -= 1000
                 entity.resetProgress()
             }
-
         }
 
         private fun canInsertItemIntoOutputSlot(container: AGContainer, output: ItemStack): Boolean {
             return container.getItem(9).item == output.item || container.getItem(9).isEmpty
         }
 
-        private fun canInsertAmountIntoOutputSlot(container: AGContainer): Boolean {
-            return container.getItem(9).maxStackSize > container.getItem(9).count
+        private fun canInsertAmountIntoOutputSlot(container: AGContainer, output: ItemStack): Boolean {
+            val current = container.getItem(9)
+
+            if (current.isEmpty) {
+                return output.count <= output.maxStackSize
+            }
+
+            return current.item == output.item && current.count + output.count <= current.maxStackSize
         }
 
         private fun updateActiveState(entity: AssemblerEntity, active: Boolean) {

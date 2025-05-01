@@ -4,9 +4,12 @@ import com.google.common.collect.HashMultiset
 import com.google.gson.JsonObject
 import dev.tobynguyen27.astralgenerators.utils.AGContainer
 import net.minecraft.core.NonNullList
+import net.minecraft.nbt.Tag
+import net.minecraft.nbt.TagParser
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.GsonHelper
+import net.minecraft.world.entity.player.StackedContents
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.crafting.*
 import net.minecraft.world.level.Level
@@ -16,20 +19,19 @@ class AssemblerRecipe(val recipeId: ResourceLocation, val output: ItemStack, val
 
 
     override fun matches(container: AGContainer, level: Level): Boolean {
-        val containerItems = (0..8).map { container.getItem(it) }
-        val containerMultiset = HashMultiset.create<ItemStack>()
+        val stackedContents: StackedContents = StackedContents()
+        var i = 0
 
-        containerItems.filter { !it.isEmpty }.forEach { containerMultiset.add(it) }
+        for (index in 0..8) {
+            val stack = container.getItem(index)
 
-        for (input in inputs) {
-            val match = containerMultiset.elementSet().find { item -> input.test(item) }
-            if (match != null && containerMultiset.count(match) > 0) {
-                containerMultiset.remove(match)  // Remove one occurrence
-            } else {
-                return false  // Input not found
+            if (!stack.isEmpty) {
+                ++i;
+                stackedContents.accountStack(stack, container.getItem(index).count)
             }
         }
-        return true
+
+        return i == inputs.size && stackedContents.canCraft(this, null)
     }
 
     override fun assemble(container: AGContainer): ItemStack {
@@ -73,14 +75,41 @@ class AssemblerRecipe(val recipeId: ResourceLocation, val output: ItemStack, val
 
     object Serializer : RecipeSerializer<AssemblerRecipe> {
         override fun fromJson(recipeId: ResourceLocation, json: JsonObject): AssemblerRecipe {
-            val output = ShapedRecipe.itemFromJson(GsonHelper.getAsJsonObject(json, "output"))
+            // OUTPUT
+            val outputObj = GsonHelper.getAsJsonObject(json, "output")
+            val output = ShapedRecipe.itemStackFromJson(outputObj)
 
-            val inputsJson = GsonHelper.getAsJsonArray(json, "inputs")
-            val inputs = NonNullList.create<Ingredient>().apply {
-                inputsJson.forEach { add(Ingredient.fromJson(it)) }
+            val tag = if (outputObj.has("nbt")) {
+                val nbtObj = outputObj.get("nbt")
+
+                if (nbtObj.isJsonObject) {
+                    TagParser.parseTag(nbtObj.toString())
+                } else {
+                    TagParser.parseTag(GsonHelper.convertToString(nbtObj, "nbt"))
+                }
+            } else {
+                null
+            }
+            if (tag != null) {
+                output.tag = tag
             }
 
-            return AssemblerRecipe(recipeId, output.defaultInstance, inputs)
+            // INPUT
+            val inputsArray = GsonHelper.getAsJsonArray(json, "inputs")
+            val inputsList = NonNullList.create<Ingredient>()
+
+            inputsArray.forEach { input ->
+                val ingredient = Ingredient.fromJson(input)
+                val count = GsonHelper.getAsInt(input.asJsonObject, "count", 1)
+
+                if (!ingredient.isEmpty) {
+                    repeat(count) {
+                        inputsList.add(ingredient)
+                    }
+                }
+            }
+
+            return AssemblerRecipe(recipeId, output, inputsList)
         }
 
         override fun fromNetwork(recipeId: ResourceLocation, buffer: FriendlyByteBuf): AssemblerRecipe {
