@@ -1,6 +1,6 @@
 package dev.tobynguyen27.astralgenerators.data.blocks.machines
 
-import dev.tobynguyen27.astralgenerators.data.blockentities.AGBlockEntities
+import dev.tobynguyen27.astralgenerators.data.AGBlockEntities
 import dev.tobynguyen27.astralgenerators.data.blockentities.AssemblerEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.EntityBlock
 import net.minecraft.world.level.block.RenderShape
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker

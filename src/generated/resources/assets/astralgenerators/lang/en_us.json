@@ -1,5 +1,16 @@
 {
   "block.astralgenerators.assembler": "Assembler",
+  "block.astralgenerators.boiler_casing": "Boiler Casing",
+  "block.astralgenerators.boiler_controller": "Boiler Controller",
+  "block.astralgenerators.fusion_reactor_casing": "Fusion Reactor Casing",
+  "block.astralgenerators.fusion_reactor_coil": "Fusion Reactor Coil",
+  "block.astralgenerators.fusion_reactor_controller": "Fusion Reactor Controller",
+  "block.astralgenerators.fusion_reactor_glass": "Fusion Reactor Glass",
+  "block.astralgenerators.multiblock_projector": "Multiblock Projector",
+  "block.astralgenerators.pipe_casing": "Pipe Casing",
+  "block.astralgenerators.steam": "Steam",
+  "block.astralgenerators.steam_turbine_casing": "Steam Turbine Casing",
+  "block.astralgenerators.steam_turbine_controller": "Steam Turbine Controller",
   "item.astralgenerators.astralnomicon": "Astralnomicon",
   "itemGroup.astralgenerators.general": "Astral Generators"
 }
