@@ -1,9 +1,7 @@
-package dev.tobynguyen27.astralgenerators.data
+package dev.tobynguyen27.astralgenerators.data.blockentities
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry
 import dev.tobynguyen27.astralgenerators.AstralGenerators.LOGGER
-import dev.tobynguyen27.astralgenerators.data.blockentities.AssemblerEntity
-import dev.tobynguyen27.astralgenerators.data.blockentities.MultiblockProjectorEntity
 import dev.tobynguyen27.astralgenerators.data.blocks.AGMachines
 import net.minecraft.core.Registry
 

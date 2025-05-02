@@ -164,8 +164,6 @@ object AGMachines {
             .addModel()
     }
 
-    fun init() {
-        LOGGER.info("Registering machines...")
-    }
+    fun init() {}
 
 }

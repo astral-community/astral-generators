@@ -1,6 +1,5 @@
 package dev.tobynguyen27.astralgenerators.data.items
 
-import dev.tobynguyen27.astralgenerators.data.AGItems
 import net.minecraft.ChatFormatting
 import net.minecraft.core.Registry
 import net.minecraft.network.chat.Component

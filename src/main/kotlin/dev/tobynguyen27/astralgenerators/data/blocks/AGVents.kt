@@ -2,10 +2,7 @@ package dev.tobynguyen27.astralgenerators.data.blocks
 
 import com.tterrag.registrate.Registrate
 import com.tterrag.registrate.builders.BlockBuilder
-import dev.tobynguyen27.astralgenerators.AstralGenerators
-import dev.tobynguyen27.astralgenerators.AstralGenerators.LOGGER
 import dev.tobynguyen27.astralgenerators.AstralGenerators.REGISTRATE
-import dev.tobynguyen27.astralgenerators.data.blocks.vents.SteamTurbineVent
 import dev.tobynguyen27.astralgenerators.utils.FormattingUtil
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.tags.BlockTags
@@ -21,7 +18,7 @@ object AGVents {
         create(
             "steam_turbine_vent",
             "steam_turbine_casing",
-            ::SteamTurbineVent
+            ::Block
         ).register()
 
     private fun <T : Block> create(
@@ -30,23 +27,23 @@ object AGVents {
         displayName: String,
         blockSupplier: (BlockBehaviour.Properties) -> T
     ): BlockBuilder<T, Registrate> {
-        return REGISTRATE.block<T>(name, blockSupplier).lang(displayName)
-            .properties {
+        return REGISTRATE.block<T>(name, blockSupplier).lang(displayName).blockstate { ctx, prov ->
+            prov.simpleBlock(
+                ctx.entry,
+                prov.models().withExistingParent(ctx.name, prov.modLoc("block/cube_2_layer/all"))
+                    .texture("bot_all", prov.modLoc("block/casings/${casingName}"))
+                    .texture(
+                        "top_all",
+                        prov.modLoc("block/vents/${name}")
+                    )
+            )
+        }.properties {
                 BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(1f, 1f)
                     .sound(SoundType.METAL)
-            }.blockstate { ctx, prov ->
-                prov.simpleBlock(
-                    ctx.entry,
-                    prov.models().withExistingParent(ctx.name, prov.modLoc("block/cube_2_layer/all"))
-                        .texture("bot_all", prov.modLoc("block/casings/${casingName}"))
-                        .texture(
-                            "top_all",
-                            prov.modLoc("block/vents/${name}")
-                        )
-                )
-            }.simpleItem().addLayer { Supplier { RenderType.translucent() } }
+            }.tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.NEEDS_IRON_TOOL).simpleItem()
+            .addLayer { Supplier { RenderType.translucent() } }
     }
 
     private fun <T : Block> create(
@@ -57,7 +54,5 @@ object AGVents {
         return create(name, casingName, FormattingUtil.toEnglishName(name), blockSupplier)
     }
 
-    fun init() {
-        LOGGER.info("Registering vent blocks...")
-    }
+    fun init() {}
 }

@@ -29,11 +29,11 @@ object AGGlasses {
                 ctx.entry,
                 prov.models().cubeAll(ctx.name, prov.modLoc("block/glasses/${name}"))
             )
-        }.simpleItem().properties {
+        }.properties {
             BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f, 0.3f).sound(SoundType.GLASS)
                 .requiresCorrectToolForDrops().noOcclusion()
 
-        }.tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.IMPERMEABLE)
+        }.simpleItem().tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.IMPERMEABLE)
             .addLayer { Supplier { RenderType.translucent() } }
     }
 
@@ -44,7 +44,5 @@ object AGGlasses {
         return create(name, FormattingUtil.toEnglishName(name), blockSupplier)
     }
 
-    fun init() {
-        LOGGER.info("Registering glasses...")
-    }
+    fun init() {}
 }

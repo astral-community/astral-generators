@@ -1,9 +1,8 @@
-package dev.tobynguyen27.astralgenerators.data
+package dev.tobynguyen27.astralgenerators.data.items
 
 import com.tterrag.registrate.util.entry.ItemEntry
 import dev.tobynguyen27.astralgenerators.AstralGenerators.LOGGER
 import dev.tobynguyen27.astralgenerators.AstralGenerators.REGISTRATE
-import dev.tobynguyen27.astralgenerators.data.items.Astralnomicon
 
 object AGItems {
     val ASTRALNOMICON: ItemEntry<Astralnomicon> =

@@ -1,7 +1,6 @@
 package dev.tobynguyen27.astralgenerators.data.blocks.machines
 
-import dev.tobynguyen27.astralgenerators.data.AGBlockEntities
-import dev.tobynguyen27.astralgenerators.data.blocks.machines.Assembler.Companion
+import dev.tobynguyen27.astralgenerators.data.blockentities.AGBlockEntities
 import dev.tobynguyen27.astralgenerators.multiblock.MultiblockType
 import net.minecraft.ChatFormatting
 import net.minecraft.core.BlockPos

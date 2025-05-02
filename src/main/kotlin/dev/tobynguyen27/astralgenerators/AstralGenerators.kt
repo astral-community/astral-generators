@@ -1,24 +1,21 @@
 package dev.tobynguyen27.astralgenerators
 
 import com.tterrag.registrate.Registrate
-import dev.tobynguyen27.astralgenerators.data.AGBlockEntities
-import dev.tobynguyen27.astralgenerators.data.AGBlocks
-import dev.tobynguyen27.astralgenerators.data.AGFluids
-import dev.tobynguyen27.astralgenerators.data.AGItems
+import dev.tobynguyen27.astralgenerators.data.blockentities.AGBlockEntities
+import dev.tobynguyen27.astralgenerators.data.items.AGItems
 import dev.tobynguyen27.astralgenerators.data.blockentities.AGBlockEntitiesIntegrations
-import dev.tobynguyen27.astralgenerators.data.blockentities.AssemblerEntity
+import dev.tobynguyen27.astralgenerators.data.blocks.AGBlocks
+import dev.tobynguyen27.astralgenerators.data.fluids.AGFluids
 import dev.tobynguyen27.astralgenerators.data.recipes.AGRecipes
 import dev.tobynguyen27.astralgenerators.gui.AGMenuTypes
 import dev.tobynguyen27.astralgenerators.multiblock.MultiblockManager
-import dev.tobynguyen27.astralgenerators.utils.FormattingUtil
+import dev.tobynguyen27.astralgenerators.utils.Identifier
 import dev.tobynguyen27.astralgenerators.utils.TimeKeeper
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.fabricmc.loader.api.FabricLoader
-import net.minecraft.resources.ResourceLocation
 import org.slf4j.LoggerFactory
-import team.reborn.energy.api.EnergyStorage
 
 object AstralGenerators : ModInitializer {
     const val MOD_ID: String = "astralgenerators"
@@ -26,7 +23,7 @@ object AstralGenerators : ModInitializer {
 
     val LOGGER = LoggerFactory.getLogger(MOD_ID)
     val REGISTRATE = Registrate.create(MOD_ID)
-    val ITEM_GROUP = FabricItemGroupBuilder.build(id("general")) {
+    val ITEM_GROUP = FabricItemGroupBuilder.build(Identifier("general")) {
         AGItems.ASTRALNOMICON.get().defaultInstance
     }
 
@@ -52,10 +49,6 @@ object AstralGenerators : ModInitializer {
 
         REGISTRATE.creativeModeTab { ITEM_GROUP }
         REGISTRATE.addRawLang("itemGroup.$MOD_ID.general", MOD_NAME)
-    }
-
-    fun id(path: String): ResourceLocation {
-        return ResourceLocation(MOD_ID, FormattingUtil.toLowerCaseUnder(path))
     }
 
     fun appendIdString(id: String): String {

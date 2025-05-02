@@ -9,6 +9,7 @@ import com.tterrag.registrate.Registrate
 import com.tterrag.registrate.builders.BlockBuilder
 import dev.tobynguyen27.astralgenerators.AstralGenerators
 import dev.tobynguyen27.astralgenerators.utils.FormattingUtil
+import net.minecraft.world.level.material.MaterialColor
 
 object AGCoils {
 
@@ -26,11 +27,11 @@ object AGCoils {
                 ctx.entry,
                 prov.models().cubeAll(ctx.name, prov.modLoc("block/coils/${name}"))
             )
-        }.simpleItem().properties {
-            BlockBehaviour.Properties.of(Material.METAL).strength(5f, 6f).sound(SoundType.METAL)
+        }.properties {
+            BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).strength(5f, 6f).sound(SoundType.METAL)
                 .requiresCorrectToolForDrops()
 
-        }.tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.NEEDS_IRON_TOOL)
+        }.tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.NEEDS_IRON_TOOL).simpleItem()
     }
 
     private fun <T : Block> create(
@@ -40,7 +41,5 @@ object AGCoils {
         return create(name, FormattingUtil.toEnglishName(name), blockSupplier)
     }
 
-    fun init() {
-        AstralGenerators.LOGGER.info("Registering coils...")
-    }
+    fun init() {}
 }

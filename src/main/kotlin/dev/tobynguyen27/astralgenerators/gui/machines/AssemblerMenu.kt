@@ -3,6 +3,7 @@ package dev.tobynguyen27.astralgenerators.gui.machines
 import dev.tobynguyen27.astralgenerators.AstralGenerators
 import dev.tobynguyen27.astralgenerators.data.blockentities.AssemblerEntity
 import dev.tobynguyen27.astralgenerators.gui.AGMenuTypes
+import dev.tobynguyen27.astralgenerators.utils.Identifier
 import io.github.cottonmc.cotton.gui.SyncedGuiDescription
 import io.github.cottonmc.cotton.gui.widget.TooltipBuilder
 import io.github.cottonmc.cotton.gui.widget.WBar
@@ -48,8 +49,8 @@ class AssemblerMenu(syncId: Int, playerInventory: Inventory, ctx: ContainerLevel
 
         // Energy bar
         val energyBar = object : WBar(
-            AstralGenerators.id("textures/gui/widget_energy_empty.png"),
-            AstralGenerators.id("textures/gui/widget_energy_full.png"),
+            Identifier("textures/gui/widget_energy_empty.png"),
+            Identifier("textures/gui/widget_energy_full.png"),
             0,
             1
         ) {
@@ -65,8 +66,8 @@ class AssemblerMenu(syncId: Int, playerInventory: Inventory, ctx: ContainerLevel
 
         // Progress bar
         val progressBar = WBar(
-            AstralGenerators.id("textures/gui/widget_progress_empty.png"),
-            AstralGenerators.id("textures/gui/widget_progress_full.png"),
+            Identifier("textures/gui/widget_progress_empty.png"),
+            Identifier("textures/gui/widget_progress_full.png"),
             2,
             3,
             WBar.Direction.RIGHT
