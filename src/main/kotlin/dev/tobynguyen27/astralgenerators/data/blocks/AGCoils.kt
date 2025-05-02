@@ -8,13 +8,13 @@ import net.minecraft.world.level.material.Material
 import com.tterrag.registrate.Registrate
 import com.tterrag.registrate.builders.BlockBuilder
 import dev.tobynguyen27.astralgenerators.AstralGenerators
-import dev.tobynguyen27.astralgenerators.data.blocks.coils.FusionReactorCoil
 import dev.tobynguyen27.astralgenerators.utils.FormattingUtil
 
 object AGCoils {
 
     val FUSION_REACTOR_COIL =
-        create("fusion_reactor_coil", ::FusionReactorCoil).register()
+        create("fusion_reactor_coil", ::Block).register()
+    val HIGH_MAGNETIC_COIL = create("high_magnetic_coil", ::Block).register()
 
     private fun <T : Block> create(
         name: String,

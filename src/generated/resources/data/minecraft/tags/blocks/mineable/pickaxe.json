@@ -5,7 +5,9 @@
     "astralgenerators:steam_turbine_casing",
     "astralgenerators:fusion_reactor_casing",
     "astralgenerators:pipe_casing",
+    "astralgenerators:matrix_casing",
     "astralgenerators:fusion_reactor_glass",
-    "astralgenerators:fusion_reactor_coil"
+    "astralgenerators:fusion_reactor_coil",
+    "astralgenerators:high_magnetic_coil"
   ]
 }

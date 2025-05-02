@@ -89,6 +89,16 @@ object AGMachines {
                 }
             }.simpleItem().addLayer { Supplier { RenderType.translucent() } }.register()
 
+    val AMALGAMATION_MATRIX_CONTROLLER =
+        REGISTRATE.block<AmalgamationMatrixController>(AmalgamationMatrixController.ID, ::AmalgamationMatrixController)
+            .lang(FormattingUtil.toEnglishName(AmalgamationMatrixController.ID))
+            .blockstate { ctx, prov ->
+                for ((direction, rotationY) in AGDirections.directions) {
+                    createControllerModel("matrix_casing", ctx, prov, true, direction, rotationY)
+                    createControllerModel("matrix_casing", ctx, prov, false, direction, rotationY)
+                }
+            }.simpleItem().addLayer { Supplier { RenderType.translucent() } }.register()
+
     private fun <T : Block> createControllerModel(
         casingName: String,
         ctx: DataGenContext<Block, T>,

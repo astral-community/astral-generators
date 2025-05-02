@@ -5,10 +5,7 @@ import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.util.entry.BlockEntry
 import dev.tobynguyen27.astralgenerators.AstralGenerators.LOGGER
 import dev.tobynguyen27.astralgenerators.AstralGenerators.REGISTRATE
-import dev.tobynguyen27.astralgenerators.data.blocks.casings.BoilerCasing
-import dev.tobynguyen27.astralgenerators.data.blocks.casings.FusionReactorCasing
-import dev.tobynguyen27.astralgenerators.data.blocks.casings.PipeCasing
-import dev.tobynguyen27.astralgenerators.data.blocks.casings.SteamTurbineCasing
+import dev.tobynguyen27.astralgenerators.data.blocks.casings.*
 import dev.tobynguyen27.astralgenerators.utils.FormattingUtil
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.level.block.Block
@@ -26,6 +23,7 @@ object AGCasings {
         create(FusionReactorCasing.ID, ::FusionReactorCasing).register()
     val PIPE_CASING: BlockEntry<PipeCasing> =
         create(PipeCasing.ID, ::PipeCasing).register()
+    val MATRIX_CASING = create(MatrixCasing.ID, ::MatrixCasing).register()
 
     private fun <T : Block> create(
         name: String,
