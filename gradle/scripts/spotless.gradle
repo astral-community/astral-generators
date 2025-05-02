@@ -4,12 +4,10 @@ spotless {
     kotlin {
         target "src/*/kotlin/astralgenerators/**/*.kt"
 
+        ktlint().setEditorConfigPath("$rootDir/spotless/spotless.ktlint")
+
         endWithNewline()
         toggleOffOn()
-
-        ktfmt().kotlinlangStyle().configure {
-            it.removeUnusedImports = true
-        }
     }
 
     format("dotfiles") {
