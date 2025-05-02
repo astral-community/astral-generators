@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "astralgenerators:boiler_controller"
+          "name": "astralgenerators:solid_fuel_boiler_controller"
         }
       ],
       "conditions": [

@@ -13,6 +13,6 @@
     "top_east": "astralgenerators:block/casings/boiler_casing",
     "top_west": "astralgenerators:block/casings/boiler_casing",
     "top_south": "astralgenerators:block/casings/boiler_casing",
-    "top_north": "astralgenerators:block/machines/boiler_controller_active"
+    "top_north": "astralgenerators:block/machines/solid_fuel_boiler_controller_active"
   }
 }

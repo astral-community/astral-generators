@@ -1,0 +1,46 @@
+{
+  "type": "custommachinery:custom_machine",
+  "machine": "astralgenerators:steam_turbine_controller",
+  "time": 10,
+  "requirements": [
+    {
+      "type": "custommachinery:fluid",
+      "fluid": "astralgenerators:steam",
+      "amount": 84000,
+      "mode": "input"
+    },
+    {
+      "type": "custommachinery:energy",
+      "amount": 15000,
+      "mode": "output"
+    },
+    {
+      "type": "custommachinery:structure",
+      "keys": {
+        "a": "astralgenerators:steam_turbine_casing",
+        "b": "astralgenerators:pipe_casing",
+        "c": "astralgenerators:steam_turbine_vent"
+      },
+      "pattern": [
+        [
+          "aaaa",
+          "aaaa",
+          "aaaa",
+          " m  "
+        ],
+        [
+          "aaaa",
+          "abba",
+          "abaa",
+          " b  "
+        ],
+        [
+          "aaaa",
+          "acca",
+          "aaaa",
+          "    "
+        ]
+      ]
+    }
+  ]
+}

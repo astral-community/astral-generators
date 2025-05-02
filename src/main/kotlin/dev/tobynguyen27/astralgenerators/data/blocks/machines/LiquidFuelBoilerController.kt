@@ -16,9 +16,9 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.BooleanProperty
 import net.minecraft.world.phys.BlockHitResult
 
-class BoilerController(properties: Properties) : Block(properties) {
+class LiquidFuelBoilerController(properties: Properties) : Block(properties) {
     companion object {
-        val ID = "boiler_controller"
+        val ID = "liquid_fuel_boiler_controller"
 
         val FACING = BlockStateProperties.HORIZONTAL_FACING
         val ACTIVE = BooleanProperty.create("active")

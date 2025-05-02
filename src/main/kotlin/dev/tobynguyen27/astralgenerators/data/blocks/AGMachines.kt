@@ -51,9 +51,18 @@ object AGMachines {
                 }
             }.simpleItem().register()
 
-    val BOILER_CONTROLLER =
-        REGISTRATE.block<BoilerController>(BoilerController.ID, ::BoilerController)
-            .lang(FormattingUtil.toEnglishName(BoilerController.ID))
+    val SOLID_FUEL_BOILER_CONTROLLER =
+        REGISTRATE.block<SolidFuelBoilerController>(SolidFuelBoilerController.ID, ::SolidFuelBoilerController)
+            .lang(FormattingUtil.toEnglishName(SolidFuelBoilerController.ID))
+            .blockstate { ctx, prov ->
+                for ((direction, rotationY) in AGDirections.directions) {
+                    createControllerModel("boiler_casing", ctx, prov, true, direction, rotationY)
+                    createControllerModel("boiler_casing", ctx, prov, false, direction, rotationY)
+                }
+            }.simpleItem().addLayer { Supplier { RenderType.translucent() } }.register()
+    val LIQUID_FUEL_BOILER_CONTROLLER =
+        REGISTRATE.block<LiquidFuelBoilerController>(LiquidFuelBoilerController.ID, ::LiquidFuelBoilerController)
+            .lang(FormattingUtil.toEnglishName(LiquidFuelBoilerController.ID))
             .blockstate { ctx, prov ->
                 for ((direction, rotationY) in AGDirections.directions) {
                     createControllerModel("boiler_casing", ctx, prov, true, direction, rotationY)

@@ -1,9 +1,6 @@
 package dev.tobynguyen27.astralgenerators.data
 
-import dev.tobynguyen27.astralgenerators.data.blocks.AGCasings
-import dev.tobynguyen27.astralgenerators.data.blocks.AGCoils
-import dev.tobynguyen27.astralgenerators.data.blocks.AGGlasses
-import dev.tobynguyen27.astralgenerators.data.blocks.AGMachines
+import dev.tobynguyen27.astralgenerators.data.blocks.*
 
 object AGBlocks {
     fun init() {
@@ -11,5 +8,6 @@ object AGBlocks {
         AGCasings.init()
         AGGlasses.init()
         AGCoils.init()
+        AGVents.init()
     }
 }

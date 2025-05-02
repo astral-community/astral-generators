@@ -10,6 +10,9 @@
       "connect_to": [
         {
           "block": "astralgenerators:steam_turbine_casing"
+        },
+        {
+          "block": "astralgenerators:steam_turbine_vent"
         }
       ]
     }
