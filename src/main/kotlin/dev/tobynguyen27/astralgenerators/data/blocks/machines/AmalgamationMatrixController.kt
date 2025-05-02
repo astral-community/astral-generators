@@ -45,18 +45,6 @@ class AmalgamationMatrixController(properties: Properties) : Block(properties) {
         )
     }
 
-    override fun use(
-        state: BlockState,
-        level: Level,
-        pos: BlockPos,
-        player: Player,
-        hand: InteractionHand,
-        hit: BlockHitResult
-    ): InteractionResult {
-        player.openMenu(state.getMenuProvider(level, pos))
-        return InteractionResult.SUCCESS
-    }
-
     override fun getRenderShape(state: BlockState): RenderShape {
         return RenderShape.MODEL
     }
