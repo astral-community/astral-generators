@@ -29,10 +29,12 @@ class MultiblockProjector(properties: Properties) : BaseEntityBlock(properties) 
     companion object {
         val ID = "multiblock_projector"
 
-        val ENABLE_MESSAGE_KEY = "multiblock_projector.enable"
-        val ENABLE_MESSAGE = "Multiblock Projector enabled"
-        val DISABLE_MESSAGE_KEY = "multiblock_projector.disable"
-        val DISABLE_MESSAGE = "Multiblock Projector disabled"
+        // TODO: Translations
+        //val ENABLE_MESSAGE_KEY = "multiblock_projector.enable"
+        val ENABLE_MESSAGE_KEY = "Multiblock Projector enabled"
+
+        //val DISABLE_MESSAGE_KEY = "multiblock_projector.disable"
+        val DISABLE_MESSAGE_KEY = "Multiblock Projector disabled"
 
         val FACING = BlockStateProperties.HORIZONTAL_FACING
         val ACTIVE = BooleanProperty.create("active")
@@ -43,7 +45,7 @@ class MultiblockProjector(properties: Properties) : BaseEntityBlock(properties) 
         registerDefaultState(with(defaultBlockState()) { setValue(FACING, Direction.NORTH) })
         registerDefaultState(with(defaultBlockState()) { setValue(ACTIVE, false) })
         registerDefaultState(
-            with(defaultBlockState()) { setValue(MULTIBLOCK_TYPE, MultiblockType.FUSION_REACTOR) }
+            with(defaultBlockState()) { setValue(MULTIBLOCK_TYPE, MultiblockType.AMALGAMATION_MATRIX) }
         )
     }
 

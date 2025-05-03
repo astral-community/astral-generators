@@ -2,20 +2,17 @@
   "origin": {
     "x": -2,
     "y": 0,
-    "z": 2
+    "z": 3
   },
   "keys": {
     "a": {
-      "block": "techreborn:basic_machine_frame"
+      "block": "astralgenerators:matrix_casing"
     },
     "b": {
-      "block": "astralgenerators:superconducting_coil"
+      "block": "createastral:ultramatter"
     },
     "c": {
-      "block": "techreborn:advanced_machine_casing"
-    },
-    "d": {
-      "block": "astralgenerators:convergence_core"
+      "block": "astralgenerators:high_magnetic_coil"
     },
     "m": {
       "block": "custommachinery:custom_machine_block"
@@ -23,67 +20,67 @@
   },
   "pattern": [
     [
-      "aaaaa",
-      "aaaaa",
-      "maaaa",
-      "aaaaa",
-      "aaaaa"
+      " abbba ",
+      "a     a",
+      "b     b",
+      "b     b",
+      "b     b",
+      "a     a",
+      " abbba "
     ],
     [
-      "aaaaa",
-      "abbba",
-      "abbba",
-      "abbba",
-      "aaaaa"
+      "a     a",
+      " baaab ",
+      " a   a ",
+      " m   a ",
+      " a   a ",
+      " baaab ",
+      "a     a"
     ],
     [
-      "     ",
-      " ccc ",
-      " ccc ",
-      " ccc ",
-      "     "
+      "c     c",
+      " b   b ",
+      "       ",
+      "       ",
+      "       ",
+      " b   b ",
+      "c     c"
     ],
     [
-      "     ",
-      "     ",
-      "  c  ",
-      "     ",
-      "     "
+      "c     c",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "c     c"
     ],
     [
-      "     ",
-      "     ",
-      "  d  ",
-      "     ",
-      "     "
+      "c     c",
+      " b   b ",
+      "       ",
+      "       ",
+      "       ",
+      " b   b ",
+      "c     c"
     ],
     [
-      "     ",
-      "     ",
-      "  c  ",
-      "     ",
-      "     "
+      "a     a",
+      " baaab ",
+      " a   a ",
+      " a   a ",
+      " a   a ",
+      " baaab ",
+      "a     a"
     ],
     [
-      "     ",
-      " ccc ",
-      " ccc ",
-      " ccc ",
-      "     "
-    ],
-    [
-      "aaaaa",
-      "abbba",
-      "abbba",
-      "abbba",
-      "aaaaa"
-    ],
-    [
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa",
-      "aaaaa"
+      " abbba ",
+      "a     a",
+      "b     b",
+      "b     b",
+      "b     b",
+      "a     a",
+      " abbba "
     ]
   ]
 }

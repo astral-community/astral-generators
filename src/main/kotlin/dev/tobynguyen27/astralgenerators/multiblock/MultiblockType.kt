@@ -3,8 +3,6 @@ package dev.tobynguyen27.astralgenerators.multiblock
 import net.minecraft.util.StringRepresentable
 
 enum class MultiblockType(private val multiblockName: String) : StringRepresentable {
-    FUSION_REACTOR("fusion_reactor"),
-    PARTICLE_ACCELERATOR("particle_accelerator"),
     STEAM_TURBINE("steam_turbine"),
     AMALGAMATION_MATRIX("amalgamation_matrix"),
     SOLID_BOILER("solid_boiler"),
