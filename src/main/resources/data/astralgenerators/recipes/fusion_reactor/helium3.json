@@ -1,0 +1,35 @@
+{
+  "type": "custommachinery:custom_machine",
+  "machine": "astralgenerators:fusion_reactor_controller",
+  "time": 10,
+  "requirements": [
+    {
+      "type": "custommachinery:fluid",
+      "mode": "input",
+      "fluid": "techreborn:deuterium",
+      "amount": 100800
+    },
+    {
+      "type": "custommachinery:fluid",
+      "mode": "input",
+      "fluid": "techreborn:tritium",
+      "amount": 100800
+    },
+    {
+      "type": "custommachinery:fluid",
+      "fluid": "techreborn:helium3",
+      "amount": 100800,
+      "mode": "output"
+    },
+    {
+      "type": "custommachinery:energy",
+      "mode": "input",
+      "amount": 1000000
+    },
+    {
+      "type": "custommachinery:energy",
+      "mode": "output",
+      "amount": 10000000
+    }
+  ]
+}
