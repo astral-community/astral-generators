@@ -1,41 +1,41 @@
 dependencies {
-    setup(dependencies)
-    devEnv(dependencies)
-    modDeps(dependencies)
+  setup(dependencies)
+  devEnv(dependencies)
+  modDeps(dependencies)
 }
 
 def modDeps(DependencyHandler deps) {
-    deps.modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    deps.modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
-    deps.modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
-    deps.modImplementation "com.github.astral-community:CodeBebeLib:${codebebelib_version}"
+  deps.modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+  deps.modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+  deps.modImplementation "vazkii.patchouli:Patchouli:${patchouli_version}"
+  deps.modImplementation "com.github.astral-community:CodeBebeLib:${codebebelib_version}"
 
-    deps.modApi(deps.include("io.github.cottonmc:LibGui:${project.libgui_version}"))
-    deps.modApi(deps.include("io.github.fabricators_of_create:Porting-Lib:$port_lib_version+$minecraft_version"))
-    deps.modApi(deps.include("com.tterrag.registrate_fabric:Registrate:$registrate_version")) {
-        exclude(group: "io.github.fabricators_of_create")
-    }
-    deps.modApi(deps.include("me.alphamode:ForgeTags:$forge_tags_version"))
-    deps.modApi(deps.include("teamreborn:energy:${energy_api_version}"))
+  deps.modApi(deps.include("io.github.cottonmc:LibGui:${project.libgui_version}"))
+  deps.modApi(deps.include("io.github.fabricators_of_create:Porting-Lib:$port_lib_version+$minecraft_version"))
+  deps.modApi(deps.include("com.tterrag.registrate_fabric:Registrate:$registrate_version")) {
+    exclude(group: "io.github.fabricators_of_create")
+  }
+  deps.modApi(deps.include("me.alphamode:ForgeTags:$forge_tags_version"))
+  deps.modApi(deps.include("teamreborn:energy:${energy_api_version}"))
 
-    deps.modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rei_version"
-    deps.modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rei_version"
+  deps.modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rei_version"
+  deps.modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rei_version"
 }
 
 def devEnv(DependencyHandler deps) {
-    deps.modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rei_version"
-    deps.modLocalRuntime "maven.modrinth:lazydfu:${lazydfu_version}"
-    deps.modLocalRuntime "com.terraformersmc:modmenu:${modmenu_version}"
-    deps.modLocalRuntime "maven.modrinth:ctm-refabricated:${ctm_refabricated_version}"
-    deps.modLocalRuntime "maven.modrinth:jade:${jade_version}"
-    deps.modLocalRuntime "maven.modrinth:jade-addons-fabric:${jade_addon_version}"
+  deps.modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rei_version"
+  deps.modLocalRuntime "maven.modrinth:lazydfu:${lazydfu_version}"
+  deps.modLocalRuntime "com.terraformersmc:modmenu:${modmenu_version}"
+  deps.modLocalRuntime "maven.modrinth:ctm-refabricated:${ctm_refabricated_version}"
+  deps.modLocalRuntime "maven.modrinth:jade:${jade_version}"
+  deps.modLocalRuntime "maven.modrinth:jade-addons-fabric:${jade_addon_version}"
 }
 
 def setup(DependencyHandler deps) {
-    deps.minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    deps.mappings loom.layered() {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
-    }
-    deps.modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+  deps.minecraft "com.mojang:minecraft:${project.minecraft_version}"
+  deps.mappings loom.layered() {
+    officialMojangMappings()
+    parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
+  }
+  deps.modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 }

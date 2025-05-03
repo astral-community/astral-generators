@@ -1,18 +1,17 @@
 spotless {
-    encoding "UTF-8"
+  encoding "UTF-8"
 
-    kotlin {
-        target "src/*/kotlin/astralgenerators/**/*.kt"
+  kotlin {
+    target "src/*/kotlin/astralgenerators/**/*.kt"
 
-        ktlint().setEditorConfigPath("$rootDir/spotless/spotless.ktlint")
+    ktlint()
+    endWithNewline()
+    toggleOffOn()
+  }
 
-        endWithNewline()
-        toggleOffOn()
-    }
-
-    format("dotfiles") {
-        target(".gitignore", ".gitattributes", ".editorconfig")
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
+  format("dotfiles") {
+    target(".gitignore", ".gitattributes", ".editorconfig")
+    trimTrailingWhitespace()
+    endWithNewline()
+  }
 }
