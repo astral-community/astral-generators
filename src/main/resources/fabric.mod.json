@@ -39,8 +39,8 @@
     "astralgenerators.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.13",
-    "minecraft": "~1.18.2",
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "~${minecraft_version}",
     "java": ">=17",
     "fabric-api": "*",
     "fabric-language-kotlin": "*",

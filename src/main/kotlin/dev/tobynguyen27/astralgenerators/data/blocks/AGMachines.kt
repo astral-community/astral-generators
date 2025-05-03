@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty
 import java.util.function.Supplier
 
 object AGMachines {
-    val ASSSEMBLER: BlockEntry<Assembler> =
+    val ASSEMBLER: BlockEntry<Assembler> =
         REGISTRATE.block<Assembler>(Assembler.ID, ::Assembler).lang(FormattingUtil.toEnglishName(Assembler.ID))
             .blockEntity { type, pos, state ->
                 AssemblerEntity(type, pos, state)

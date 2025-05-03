@@ -8,7 +8,7 @@ import net.minecraft.core.Registry
 object AGBlockEntities {
 
     val ASSEMBLER_ENTITY =
-        BlockEntityEntry.cast<AssemblerEntity>(AGMachines.ASSSEMBLER.getSibling(Registry.BLOCK_ENTITY_TYPE_REGISTRY))
+        BlockEntityEntry.cast<AssemblerEntity>(AGMachines.ASSEMBLER.getSibling(Registry.BLOCK_ENTITY_TYPE_REGISTRY))
     val MULTIBLOCK_PROJECTOR_ENTITY =
         BlockEntityEntry.cast<MultiblockProjectorEntity>(AGMachines.MULTIBLOCK_PROJECTOR.getSibling(Registry.BLOCK_ENTITY_TYPE_REGISTRY))
 
