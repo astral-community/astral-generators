@@ -1,0 +1,20 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "astralgenerators:block/casings/matrix_casing_ctm"
+    ],
+    "extra": {
+      "connect_to": [
+        {
+          "block": "astralgenerators:matrix_casing"
+        },
+        {
+          "block": "astralgenerators:amalgamation_matrix_controller"
+        }
+      ]
+    }
+  }
+}
