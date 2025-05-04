@@ -35,6 +35,9 @@
         "value": "dev.tobynguyen27.astralgenerators.AGDataGen",
         "adapter": "kotlin"
       }
+    ],
+    "rei_client": [
+      "dev.tobynguyen27.astralgenerators.integration.rei.AGREIPlugin"
     ]
   },
   "mixins": [
