@@ -10,6 +10,12 @@
       "connect_to": [
         {
           "block": "astralgenerators:boiler_casing"
+        },
+        {
+          "block": "astralgenerators:liquid_fuel_boiler_controller"
+        },
+        {
+          "block": "astralgenerators:solid_fuel_boiler_controller"
         }
       ]
     }

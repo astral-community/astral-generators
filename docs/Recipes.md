@@ -175,21 +175,18 @@
       "pattern": [
         [
           "aaa",
-          "aaa",
-          "aaa",
-          " m "
+          "aa ",
+          "aam"
         ],
         [
           "aaa",
-          "aba",
-          "aba",
-          "   "
+          "ab ",
+          "aa "
         ],
         [
           "aaa",
           "aaa",
-          "aaa",
-          "   "
+          "aaa"
         ]
       ]
     }
@@ -229,21 +226,18 @@
       "pattern": [
         [
           "aaa",
-          "aaa",
-          "aaa",
-          " m "
+          "aa ",
+          "aam"
         ],
         [
           "aaa",
-          "aba",
-          "aba",
-          "   "
+          "ab ",
+          "aa "
         ],
         [
           "aaa",
           "aaa",
-          "aaa",
-          "   "
+          "aaa"
         ]
       ]
     }
@@ -279,22 +273,24 @@
       },
       "pattern": [
         [
-          "aaaa",
-          "aaaa",
-          "aaaa",
-          " m  "
+          "aaa",
+          "aa ",
+          "aam"
         ],
         [
-          "aaaa",
-          "abba",
-          "abaa",
-          " b  "
+          "aaa",
+          "ab ",
+          "aa "
         ],
         [
-          "aaaa",
-          "acca",
-          "aaaa",
-          "    "
+          "aaa",
+          "cb ",
+          "aa "
+        ],
+        [
+          "aaa",
+          "aaa",
+          "aaa"
         ]
       ]
     }

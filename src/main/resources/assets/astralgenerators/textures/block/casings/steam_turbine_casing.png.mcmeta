@@ -13,6 +13,9 @@
         },
         {
           "block": "astralgenerators:steam_turbine_vent"
+        },
+        {
+          "block": "astralgenerators:steam_turbine_controller"
         }
       ]
     }
