@@ -5,7 +5,9 @@
   "name": "${mod_name}",
   "description": "${mod_description}",
   "authors": [
-    "tobynguyen27"
+    "tobynguyen27",
+    "MikoTheBoi",
+    "HyperRaccoon13"
   ],
   "contact": {
     "homepage": "https://github.com/astral-community/astral-generators",
