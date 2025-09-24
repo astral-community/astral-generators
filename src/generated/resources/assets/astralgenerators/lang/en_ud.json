@@ -1,21 +1,8 @@
 {
-  "block.astralgenerators.amalgamation_matrix_controller": "\u0279\u01DD\u05DF\u05DFo\u0279\u0287uo\u0186 x\u0131\u0279\u0287\u0250W uo\u0131\u0287\u0250\u026F\u0250b\u05DF\u0250\u026F\u2C6F",
   "block.astralgenerators.assembler": "\u0279\u01DD\u05DFq\u026F\u01DDss\u2C6F",
-  "block.astralgenerators.boiler_casing": "bu\u0131s\u0250\u0186 \u0279\u01DD\u05DF\u0131o\u15FA",
-  "block.astralgenerators.fusion_reactor_casing": "bu\u0131s\u0250\u0186 \u0279o\u0287\u0254\u0250\u01DD\u1D1A uo\u0131sn\u2132",
-  "block.astralgenerators.fusion_reactor_coil": "\u05DF\u0131o\u0186 \u0279o\u0287\u0254\u0250\u01DD\u1D1A uo\u0131sn\u2132",
-  "block.astralgenerators.fusion_reactor_controller": "\u0279\u01DD\u05DF\u05DFo\u0279\u0287uo\u0186 \u0279o\u0287\u0254\u0250\u01DD\u1D1A uo\u0131sn\u2132",
-  "block.astralgenerators.fusion_reactor_glass": "ss\u0250\u05DF\u2141 \u0279o\u0287\u0254\u0250\u01DD\u1D1A uo\u0131sn\u2132",
-  "block.astralgenerators.high_magnetic_coil": "\u05DF\u0131o\u0186 \u0254\u0131\u0287\u01DDub\u0250W \u0265b\u0131H",
-  "block.astralgenerators.liquid_fuel_boiler_controller": "\u0279\u01DD\u05DF\u05DFo\u0279\u0287uo\u0186 \u0279\u01DD\u05DF\u0131o\u15FA \u05DF\u01DDn\u2132 p\u0131nb\u0131\uA780",
-  "block.astralgenerators.matrix_casing": "bu\u0131s\u0250\u0186 x\u0131\u0279\u0287\u0250W",
-  "block.astralgenerators.multiblock_projector": "\u0279o\u0287\u0254\u01DD\u0638o\u0279\u0500 \u029E\u0254o\u05DFq\u0131\u0287\u05DFnW",
-  "block.astralgenerators.pipe_casing": "bu\u0131s\u0250\u0186 \u01DDd\u0131\u0500",
-  "block.astralgenerators.solid_fuel_boiler_controller": "\u0279\u01DD\u05DF\u05DFo\u0279\u0287uo\u0186 \u0279\u01DD\u05DF\u0131o\u15FA \u05DF\u01DDn\u2132 p\u0131\u05DFoS",
-  "block.astralgenerators.steam": "\u026F\u0250\u01DD\u0287S",
-  "block.astralgenerators.steam_turbine_casing": "bu\u0131s\u0250\u0186 \u01DDu\u0131q\u0279n\u27D8 \u026F\u0250\u01DD\u0287S",
-  "block.astralgenerators.steam_turbine_controller": "\u0279\u01DD\u05DF\u05DFo\u0279\u0287uo\u0186 \u01DDu\u0131q\u0279n\u27D8 \u026F\u0250\u01DD\u0287S",
-  "block.astralgenerators.steam_turbine_vent": "\u0287u\u01DD\u039B \u01DDu\u0131q\u0279n\u27D8 \u026F\u0250\u01DD\u0287S",
   "item.astralgenerators.astralnomicon": "uo\u0254\u0131\u026Fou\u05DF\u0250\u0279\u0287s\u2C6F",
-  "itemGroup.astralgenerators.general": "s\u0279o\u0287\u0250\u0279\u01DDu\u01DD\u2141 \u05DF\u0250\u0279\u0287s\u2C6F"
+  "itemGroup.astralgenerators.general": "s\u0279o\u0287\u0250\u0279\u01DDu\u01DD\u2141 \u05DF\u0250\u0279\u0287s\u2C6F",
+  "text.capacity": "\u028E\u0287\u0131\u0254\u0250d\u0250\u0186",
+  "text.energy": "\u028Eb\u0279\u01DDu\u018E",
+  "text.stored": "p\u01DD\u0279o\u0287S"
 }

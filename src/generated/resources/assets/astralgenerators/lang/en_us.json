@@ -1,21 +1,8 @@
 {
-  "block.astralgenerators.amalgamation_matrix_controller": "Amalgamation Matrix Controller",
   "block.astralgenerators.assembler": "Assembler",
-  "block.astralgenerators.boiler_casing": "Boiler Casing",
-  "block.astralgenerators.fusion_reactor_casing": "Fusion Reactor Casing",
-  "block.astralgenerators.fusion_reactor_coil": "Fusion Reactor Coil",
-  "block.astralgenerators.fusion_reactor_controller": "Fusion Reactor Controller",
-  "block.astralgenerators.fusion_reactor_glass": "Fusion Reactor Glass",
-  "block.astralgenerators.high_magnetic_coil": "High Magnetic Coil",
-  "block.astralgenerators.liquid_fuel_boiler_controller": "Liquid Fuel Boiler Controller",
-  "block.astralgenerators.matrix_casing": "Matrix Casing",
-  "block.astralgenerators.multiblock_projector": "Multiblock Projector",
-  "block.astralgenerators.pipe_casing": "Pipe Casing",
-  "block.astralgenerators.solid_fuel_boiler_controller": "Solid Fuel Boiler Controller",
-  "block.astralgenerators.steam": "Steam",
-  "block.astralgenerators.steam_turbine_casing": "Steam Turbine Casing",
-  "block.astralgenerators.steam_turbine_controller": "Steam Turbine Controller",
-  "block.astralgenerators.steam_turbine_vent": "Steam Turbine Vent",
   "item.astralgenerators.astralnomicon": "Astralnomicon",
-  "itemGroup.astralgenerators.general": "Astral Generators"
+  "itemGroup.astralgenerators.general": "Astral Generators",
+  "text.capacity": "Capacity",
+  "text.energy": "Energy",
+  "text.stored": "Stored"
 }
