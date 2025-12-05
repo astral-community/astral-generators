@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "side": "astralgenerators:block/machines/side",
-    "front": "astralgenerators:block/machines/assembler_active",
-    "bottom": "astralgenerators:block/machines/side",
-    "top": "astralgenerators:block/machines/assembler_top_active"
-  }
-}
